@@ -18,7 +18,7 @@ eventRoutes.get("/:id", async (req, res) => {
     res.status(400).json({ error: err });
   }
 });
-eventRoutes.post("/", (req, res) => {
+eventRoutes.post("/", async (req, res) => {
   const event = new Event({
     name: req.body.name,
     lastName: req.body.lastName,
@@ -28,14 +28,12 @@ eventRoutes.post("/", (req, res) => {
     phone: req.body.phone,
     email: req.body.email,
   });
-  event
-    .save()
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((err) => {
-      res.json({ error: err });
-    });
+  try {
+    const saveEvent = await event.save();
+    res.json(saveEvent);
+  } catch (err) {
+    res.json({ error: err });
+  }
 });
 eventRoutes.put("/:id", async (req, res) => {
   try {

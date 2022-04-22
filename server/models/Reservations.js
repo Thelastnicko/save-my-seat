@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
-const eventSchema = mongoose.Schema({
+const reservationSchema = mongoose.Schema({
+  date: Date,
   name: String,
   lastName: String,
-  theme: String,
-  date: Date,
   guests: Number,
+  table: Number,
   time: String,
   phone: String,
   email: String,
 });
 
-module.exports = mongoose.model("Events", eventSchema);
+module.exports = mongoose.model("Reservations", reservationSchema);
