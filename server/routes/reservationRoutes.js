@@ -38,11 +38,24 @@ reservationRoutes.post("/", (req, res) => {
       res.status(400).json({ error: err });
     });
 });
-reservationRoutes.put("/:id", (req, res) => {
-  console.log("Reservations hit!");
+reservationRoutes.put("/:id", async (req, res) => {
+  try {
+    const updateReservation = await Reservation.updateOne(
+      { _id: req.params.id },
+      { $set: { name: req.body.name } }
+    );
+    res.json(updateReservation);
+  } catch (err) {
+    res.status(400).json({ error: err });
+  }
 });
-reservationRoutes.delete("/:id", (req, res) => {
-  console.log("Reservations hit!");
+reservationRoutes.delete("/:id", async (req, res) => {
+  try {
+    const removeReservation = await Reservation.remove({ _id: req.params.id });
+    res.json(removeReservation);
+  } catch (err) {
+    res.status(400).json({ error: err });
+  }
 });
 
 module.exports = reservationRoutes;
