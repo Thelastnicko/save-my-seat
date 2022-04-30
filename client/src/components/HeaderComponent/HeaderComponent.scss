@@ -1,0 +1,15 @@
+.header {
+  background: rgba(200, 102, 61, 0.48);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  &__logo img {
+    height: 50px;
+    width: 140px;
+  }
+  &__link {
+    color: #ffffff;
+    margin-right: 1.5rem;
+  }
+}
