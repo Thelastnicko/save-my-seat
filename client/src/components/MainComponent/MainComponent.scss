@@ -1,0 +1,31 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Typography.scss";
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 1103px;
+  height: 322px;
+  background: rgba(99, 99, 99, 0.75);
+  justify-content: center;
+  align-items: center;
+  &__title {
+    color: $text-color;
+    font-family: poppins-med;
+  }
+  &__pickers {
+    display: flex;
+    gap: 3rem;
+    padding-top: 5rem;
+  }
+}
+.btn-link {
+  padding-top: 4rem;
+}

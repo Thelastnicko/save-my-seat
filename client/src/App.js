@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import Header from "./components/HeaderComponent/HeaderComponent";
+import MainComponent from "./components/MainComponent/MainComponent";
+import ReservationInfo from "./components/ReservationInfo/ReservationInfo";
+import Contact from "./components/Contact/Contact";
+import "antd/dist/antd.css";
+
+const customHistory = createBrowserHistory();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={customHistory}>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={MainComponent} />
+          <Route path="/tables" component={ReservationInfo} />
+          <Route path="/contact" exact component={Contact} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
