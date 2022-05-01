@@ -13,10 +13,10 @@ const HeaderComponent = () => {
         <Link to="/" className="header__link">
           Home
         </Link>
-        <Link className="header__link" to="/events">
+        <Link to="/events" className="header__link">
           Events
         </Link>
-        <Link className="header__link" to="/contact">
+        <Link to="/contact" className="header__link">
           Contact
         </Link>
       </nav>

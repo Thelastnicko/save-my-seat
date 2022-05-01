@@ -1,0 +1,112 @@
+.tables-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.tables {
+  height: 472px;
+  width: 80%;
+  background: radial-gradient(
+    60.91% 148.03% at 0.82% -0.95%,
+    #b09e70 0%,
+    rgba(230, 230, 230, 0.75) 100%
+  );
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 32px;
+  &__window {
+    width: 16px;
+    height: 223px;
+    margin-right: 1rem;
+    background: #cbecf3;
+  }
+  &__table {
+    display: flex;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    width: 65px;
+    height: 65px;
+    background: #9b4257;
+    border-radius: 6px;
+    left: 376px;
+    top: 343px;
+  }
+  &__seat {
+    display: flex;
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .seat-1-left {
+    display: flex;
+    margin-top: 1rem;
+    margin-right: 0.1rem;
+    width: 5px;
+    height: 33px;
+    background: #c4c4c4;
+    border-radius: 2px;
+  }
+  .seat-2-left {
+    display: flex;
+    margin-top: 1rem;
+    width: 11px;
+    height: 33px;
+    background: #c4c4c4;
+    border-radius: 2px;
+  }
+  .seat-1-right {
+    display: flex;
+    margin-top: 1rem;
+    margin-right: 0.3rem;
+    margin-left: 0.1rem;
+    width: 5px;
+    height: 33px;
+    background: #c4c4c4;
+    border-radius: 2px;
+  }
+  .wall {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    width: 31px;
+    height: 133px;
+    background: #62503c;
+    border-radius: 0px 0px 8px 8px;
+  }
+  .tables-vertical {
+    display: flex;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    &__bar {
+      display: flex;
+      flex-direction: column;
+    }
+    &__seats {
+      margin-left: 7.5rem;
+    }
+
+    &__seat {
+      display: inline-block;
+      margin-right: 1rem;
+      width: 45px;
+      height: 45px;
+      background: #897e72;
+      border-radius: 50%;
+    }
+    &__bar-counter {
+      display: flex;
+      width: 521px;
+      height: 106px;
+      margin-left: 4rem;
+      background: #62503c;
+      border-radius: 59px;
+    }
+  }
+}
