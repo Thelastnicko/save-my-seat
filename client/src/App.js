@@ -1,26 +1,25 @@
 import "./App.scss";
-import { Router, Switch, Route } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/HeaderComponent/HeaderComponent";
 import MainComponent from "./components/MainComponent/MainComponent";
-import ReservationInfo from "./components/ReservationInfo/ReservationInfo";
+import TablesInfo from "./components/TablesInfo/TablesInfo";
 import Contact from "./components/Contact/Contact";
+import EventComponent from "./components/EventComponent/EventComponent";
 import "antd/dist/antd.css";
-
-const customHistory = createBrowserHistory();
 
 function App() {
   return (
-    <Router history={customHistory}>
+    <BrowserRouter>
       <div className="App">
         <Header />
-        <Switch>
-          <Route exact path="/" component={MainComponent} />
-          <Route path="/tables" component={ReservationInfo} />
-          <Route path="/contact" exact component={Contact} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<MainComponent />} />
+          <Route path="/tables" element={<TablesInfo />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<EventComponent />} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
