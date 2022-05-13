@@ -7,17 +7,18 @@ import moment from "moment";
 const MainComponent = (props) => {
   let navigate = useNavigate();
   let [date, setDate] = useState(moment(new Date(), "YYYY-MM-DD"));
-  let [time, setTime] = useState("11:00 am");
+  let [time, setTime] = useState("8:00 pm");
   let [guests, setGuests] = useState(2);
   const onChangeDatePicker = (date, dateString) => {
     setDate(dateString);
   };
-  const onChangeTimePicker = (time, timeString) => {
-    setTime(time, timeString);
+  const onChangeTimePicker = (timeIn, timeString) => {
+    setTime(timeIn.format("hh:mm a"));
   };
   const onChangeGuests = (guests) => {
     setGuests(guests);
   };
+
   const onClickFindTable = () => {
     navigate(
       `/tables?date=${date.format("YYYY-MM-DD")}&time=${time}&guests=${guests}`
@@ -40,9 +41,9 @@ const MainComponent = (props) => {
             onChange={onChangeDatePicker}
           />
           <TimePicker
-            defaultValue={moment(time, "HH:mm a")}
+            defaultValue={moment(time, "hh:mm a")}
             onChange={onChangeTimePicker}
-            format="HH:mm a"
+            format="hh:mm a"
             use12Hours
           />
           <InputNumber
