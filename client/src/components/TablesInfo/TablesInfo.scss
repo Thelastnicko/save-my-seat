@@ -1,3 +1,5 @@
+@import "../../styles/Globals.scss";
+
 .tables-container {
   width: 100%;
   display: flex;
@@ -30,7 +32,7 @@
     margin-right: 0.3rem;
     width: 65px;
     height: 65px;
-    background: #9b4257;
+    background: $table-open;
     border-radius: 6px;
     left: 376px;
     top: 343px;
