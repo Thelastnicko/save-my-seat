@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./MainComponent.scss";
 import { DatePicker, TimePicker, InputNumber, Button } from "antd";
 import moment from "moment";
 
 const MainComponent = (props) => {
+  let navigate = useNavigate();
   let [date, setDate] = useState(moment(new Date(), "YYYY-MM-DD"));
   let [time, setTime] = useState("11:00 am");
   let [guests, setGuests] = useState(2);
-
   const onChangeDatePicker = (date, dateString) => {
     setDate(dateString);
   };
@@ -18,7 +19,9 @@ const MainComponent = (props) => {
     setGuests(guests);
   };
   const onClickFindTable = () => {
-    props.history.push("/tables");
+    navigate(
+      `/tables?date=${date.format("YYYY-MM-DD")}&time=${time}&guests=${guests}`
+    );
   };
   return (
     <section className="main-container">
@@ -29,7 +32,6 @@ const MainComponent = (props) => {
         available for walk-ins. Please email us for last minute reservations and
         special requests and we’ll do our best to accommodate.
       </p>
-
       <div className="form-container">
         <h3 className="form-container__title">Reservation information</h3>
         <div className="form-container__pickers">
@@ -50,7 +52,6 @@ const MainComponent = (props) => {
             onChange={onChangeGuests}
           />
         </div>
-
         <Button className="btn" onClick={onClickFindTable}>
           Find table
         </Button>

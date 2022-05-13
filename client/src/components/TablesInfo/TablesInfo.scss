@@ -110,3 +110,22 @@
     }
   }
 }
+.confirmation-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  &__back {
+    width: 72px;
+    height: 40px;
+    background-color: #f1414c;
+    border-radius: 20%;
+    border: none;
+  }
+  &__confirm {
+    width: 72px;
+    height: 40px;
+    background-color: #95db74;
+    border-radius: 20%;
+    border: none;
+  }
+}
