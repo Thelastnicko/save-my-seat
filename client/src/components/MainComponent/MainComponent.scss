@@ -7,6 +7,22 @@
   justify-content: center;
   align-items: center;
   height: 80vh;
+  &__title {
+    color: $text-color;
+    // font-size: ;
+    // font-family: ;
+    // line-height: ;
+  }
+  &__description {
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 400;
+  }
 }
 .form-container {
   display: flex;

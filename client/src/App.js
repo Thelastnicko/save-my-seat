@@ -6,6 +6,7 @@ import TablesInfo from "./components/TablesInfo/TablesInfo";
 import Contact from "./components/Contact/Contact";
 import EventComponent from "./components/EventComponent/EventComponent";
 import "antd/dist/antd.css";
+import Confirmation from "./components/Confirmation/Confirmation";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<MainComponent />} />
           <Route path="/tables" element={<TablesInfo />} />
+          <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/events" element={<EventComponent />} />
         </Routes>
