@@ -11,3 +11,9 @@
   background: rgba(99, 99, 99, 0.75);
   color: #fff;
 }
+.ant-form-item-label > label {
+  color: $text-color;
+}
+.ant-input-affix-wrapper {
+  width: 97%;
+}
