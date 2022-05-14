@@ -78,7 +78,7 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table"
+              className="tables__table tables__table__selected"
               style={{
                 background: openTables[1] ? "#91cc82" : "#9b4257",
               }}

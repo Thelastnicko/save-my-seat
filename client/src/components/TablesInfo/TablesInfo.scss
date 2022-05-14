@@ -24,6 +24,7 @@
     background: #cbecf3;
   }
   &__table {
+    cursor: pointer;
     display: flex;
     margin-left: 0.3rem;
     margin-right: 0.3rem;
@@ -34,6 +35,10 @@
     left: 376px;
     top: 343px;
   }
+  .tables__table__selected {
+    outline: #f2df9a solid 0.3rem;
+  }
+
   &__seat {
     display: flex;
     margin-left: 2rem;
