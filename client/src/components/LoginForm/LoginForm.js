@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import "antd/dist/antd.css";
 import "./LoginForm.scss";
-
 import { Form, Input, Button } from "antd";
 
-const Demo = () => {
-  const onFinish = (values) => {
-    console.log("Success:", values);
+const Login = () => {
+  let navigate = useNavigate();
+  let [user, setUser] = useState("");
+  let [pass, setPass] = useState("");
+  const onChangeUser = (event) => {
+    setUser(event.target.value);
   };
-
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+  const onChangePass = (event) => {
+    setPass(event.target.value);
+  };
+  const onClickLogin = (event) => {
+    event.preventDefault();
+    if (user === "admin" && pass === "admin") {
+      navigate(`/events`);
+    } else {
+      alert("Username or password invalid!");
+    }
   };
 
   return (
@@ -25,8 +35,6 @@ const Demo = () => {
       initialValues={{
         remember: true,
       }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       <Form.Item
@@ -39,7 +47,7 @@ const Demo = () => {
           },
         ]}
       >
-        <Input />
+        <Input value={user} onChange={onChangeUser} />
       </Form.Item>
       <Form.Item
         label="Password"
@@ -51,11 +59,9 @@ const Demo = () => {
           },
         ]}
       >
-        <Input.Password />
+        <Input.Password value={pass} onChange={onChangePass} />
       </Form.Item>
-
       <Form.Item
-        name="remember"
         valuePropName="checked"
         wrapperCol={{
           offset: 8,
@@ -69,7 +75,7 @@ const Demo = () => {
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" onClick={onClickLogin}>
           Login
         </Button>
       </Form.Item>
@@ -77,4 +83,4 @@ const Demo = () => {
   );
 };
 
-export default Demo;
+export default Login;
