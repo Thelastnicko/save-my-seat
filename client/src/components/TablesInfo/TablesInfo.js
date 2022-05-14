@@ -78,7 +78,9 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table tables__table__selected"
+              className={`tables__table ${
+                tableSelected === 1 ? "tables__table__selected" : ""
+              }`}
               style={{
                 background: openTables[1] ? "#91cc82" : "#9b4257",
               }}
@@ -89,7 +91,9 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table"
+              className={`tables__table ${
+                tableSelected === 2 ? "tables__table__selected" : ""
+              }`}
               style={{
                 background: openTables[2] ? "#91cc82" : "#9b4257",
               }}
@@ -101,7 +105,9 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table"
+              className={`tables__table ${
+                tableSelected === 3 ? "tables__table__selected" : ""
+              }`}
               style={{
                 background: openTables[3] ? "#91cc82" : "#9b4257",
               }}
@@ -112,7 +118,9 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table"
+              className={`tables__table ${
+                tableSelected === 4 ? "tables__table__selected" : ""
+              }`}
               style={{
                 background: openTables[4] ? "#91cc82" : "#9b4257",
               }}
@@ -123,7 +131,9 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table"
+              className={`tables__table ${
+                tableSelected === 5 ? "tables__table__selected" : ""
+              }`}
               style={{
                 background: openTables[5] ? "#91cc82" : "#9b4257",
               }}
@@ -134,7 +144,9 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table"
+              className={`tables__table ${
+                tableSelected === 6 ? "tables__table__selected" : ""
+              }`}
               style={{
                 background: openTables[6] ? "#91cc82" : "#9b4257",
               }}
@@ -145,7 +157,9 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table"
+              className={`tables__table ${
+                tableSelected === 7 ? "tables__table__selected" : ""
+              }`}
               style={{
                 background: openTables[7] ? "#91cc82" : "#9b4257",
               }}
@@ -159,7 +173,9 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table"
+              className={`tables__table ${
+                tableSelected === 8 ? "tables__table__selected" : ""
+              }`}
               style={{
                 background: openTables[8] ? "#91cc82" : "#9b4257",
               }}
@@ -170,7 +186,9 @@ const TablesInfo = () => {
             <span className="seat-1-left"></span>
             <span className="seat-2-left"></span>
             <div
-              className="tables__table"
+              className={`tables__table ${
+                tableSelected === 9 ? "tables__table__selected" : ""
+              }`}
               style={{
                 background: openTables[9] ? "#91cc82" : "#9b4257",
               }}
@@ -182,49 +200,63 @@ const TablesInfo = () => {
             <div className="tables-vertical__bar">
               <div className="tables-vertical__seats">
                 <span
-                  className="tables-vertical__seat"
+                  className={`tables-vertical__seat ${
+                    tableSelected === 10 ? "tables__table__selected" : ""
+                  }`}
                   style={{
                     background: openTables[10] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(10)}
                 ></span>
                 <span
-                  className="tables-vertical__seat"
+                  className={`tables-vertical__seat ${
+                    tableSelected === 11 ? "tables__table__selected" : ""
+                  }`}
                   style={{
                     background: openTables[11] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(11)}
                 ></span>
                 <span
-                  className="tables-vertical__seat"
+                  className={`tables-vertical__seat ${
+                    tableSelected === 12 ? "tables__table__selected" : ""
+                  }`}
                   style={{
                     background: openTables[12] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(12)}
                 ></span>
                 <span
-                  className="tables-vertical__seat"
+                  className={`tables-vertical__seat ${
+                    tableSelected === 13 ? "tables__table__selected" : ""
+                  }`}
                   style={{
                     background: openTables[13] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(13)}
                 ></span>
                 <span
-                  className="tables-vertical__seat"
+                  className={`tables-vertical__seat ${
+                    tableSelected === 14 ? "tables__table__selected" : ""
+                  }`}
                   style={{
                     background: openTables[14] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(14)}
                 ></span>
                 <span
-                  className="tables-vertical__seat"
+                  className={`tables-vertical__seat ${
+                    tableSelected === 15 ? "tables__table__selected" : ""
+                  }`}
                   style={{
                     background: openTables[15] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(15)}
                 ></span>
                 <span
-                  className="tables-vertical__seat"
+                  className={`tables-vertical__seat ${
+                    tableSelected === 16 ? "tables__table__selected" : ""
+                  }`}
                   style={{
                     background: openTables[16] ? "#91cc82" : "#9b4257",
                   }}
