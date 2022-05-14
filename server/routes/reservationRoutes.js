@@ -10,6 +10,17 @@ reservationRoutes.get("/", async (req, res) => {
     res.status(400).json({ error: err });
   }
 });
+reservationRoutes.get("/tables/:date/:time", async (req, res) => {
+  try {
+    const reservations = await Reservation.find({
+      date: req.params.date,
+      time: req.params.time,
+    });
+    res.json(reservations);
+  } catch (err) {
+    res.status(400).json({ error: err });
+  }
+});
 reservationRoutes.get("/:id", async (req, res) => {
   try {
     const reservationById = await Reservation.findById(req.params.id);
@@ -18,7 +29,7 @@ reservationRoutes.get("/:id", async (req, res) => {
     res.status(400).json({ error: err });
   }
 });
-reservationRoutes.post("/", (req, res) => {
+reservationRoutes.post("/", async (req, res) => {
   const reservation = new Reservation({
     date: req.body.date,
     name: req.body.name,
@@ -29,15 +40,25 @@ reservationRoutes.post("/", (req, res) => {
     phone: req.body.phone,
     email: req.body.email,
   });
-  reservation
-    .save()
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((err) => {
-      res.status(400).json({ error: err });
-    });
+  const data = await Reservation.find({
+    date: reservation.date,
+    time: reservation.time,
+    table: reservation.table,
+  });
+  if (data.length > 0) {
+    res
+      .status(400)
+      .send("This table has been reserved, please try another table");
+    return;
+  }
+  try {
+    const data = await reservation.save();
+    res.json(data);
+  } catch (err) {
+    res.status(400).json({ error: err });
+  }
 });
+
 reservationRoutes.put("/:id", async (req, res) => {
   try {
     const updateReservation = await Reservation.updateOne(

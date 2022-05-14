@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import "./TablesInfo.scss";
 import axios from "axios";
+import confirmIcon from "../../assets/icons/confirm.svg";
+import goBackIcon from "../../assets/icons/back-arrow.svg";
 
 const TablesInfo = () => {
   let navigate = useNavigate();
@@ -38,7 +40,6 @@ const TablesInfo = () => {
         for (const v of res.data) {
           ot[v.table] = false;
         }
-        console.log(ot);
         setOpenTables(ot);
       })
       .catch((err) => {});
@@ -59,7 +60,7 @@ const TablesInfo = () => {
       .post("http://localhost:8080/reservations", payLoad)
       .then((res) => {
         navigate(
-          `/confirmation?date=${payLoad.date}&time=${payLoad.time}&guests=${payLoad.guests}`
+          `/confirmation?date=${payLoad.date}&time=${payLoad.time}&guests=${payLoad.guests}&table=${tableSelected}`
         );
       })
       .catch((err) => {
@@ -79,7 +80,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[1] ? "green" : "red",
+                background: openTables[1] ? "$#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(1)}
             ></div>
@@ -90,7 +91,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[2] ? "green" : "red",
+                background: openTables[2] ? "$#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(2)}
             ></div>
@@ -102,7 +103,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[3] ? "green" : "red",
+                background: openTables[3] ? "$#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(3)}
             ></div>
@@ -113,7 +114,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[4] ? "green" : "red",
+                background: openTables[4] ? "$#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(4)}
             ></div>
@@ -124,7 +125,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[5] ? "green" : "red",
+                background: openTables[5] ? "$#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(5)}
             ></div>
@@ -135,7 +136,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[6] ? "green" : "red",
+                background: openTables[6] ? "$#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(6)}
             ></div>
@@ -146,7 +147,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[7] ? "green" : "red",
+                background: openTables[7] ? "$#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(7)}
             ></div>
@@ -160,7 +161,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[8] ? "green" : "red",
+                background: openTables[8] ? "$#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(8)}
             ></div>
@@ -171,7 +172,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[9] ? "green" : "red",
+                background: openTables[9] ? "$#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(9)}
             ></div>
@@ -183,49 +184,49 @@ const TablesInfo = () => {
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[10] ? "green" : "red",
+                    background: openTables[10] ? "$#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(10)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[11] ? "green" : "red",
+                    background: openTables[11] ? "$#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(11)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[12] ? "green" : "red",
+                    background: openTables[12] ? "$#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(12)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[13] ? "green" : "red",
+                    background: openTables[13] ? "$#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(13)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[14] ? "green" : "red",
+                    background: openTables[14] ? "$#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(14)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[15] ? "green" : "red",
+                    background: openTables[15] ? "$#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(15)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[16] ? "green" : "red",
+                    background: openTables[16] ? "$#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(16)}
                 ></span>
@@ -233,14 +234,18 @@ const TablesInfo = () => {
               <div className="tables-vertical__bar-counter"></div>
             </div>
           </div>
-          <div className="confirmation-buttons">
-            <button className="confirmation-buttons__back" onClick={goBack}>
-              Back
-            </button>
-            <button className="confirmation-buttons__confirm" onClick={confirm}>
-              Confirm
-            </button>
-          </div>
+        </div>
+        <div className="confirmation-buttons">
+          <img
+            src={goBackIcon}
+            className="confirmation-buttons__back"
+            onClick={goBack}
+          ></img>
+          <img
+            src={confirmIcon}
+            className="confirmation-buttons__confirm"
+            onClick={confirm}
+          ></img>
         </div>
       </div>
     </section>

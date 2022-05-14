@@ -17,11 +17,15 @@
     align-items: center;
     width: 521px;
     height: 331px;
-    background-color: #c4c4c4;
+    background: rgba(99, 99, 99, 0.75);
     border-radius: 28px;
   }
   &__info {
     display: flex;
     flex-direction: column;
+    color: $text-color;
   }
+}
+.contact-section__hours {
+  color: $text-color;
 }

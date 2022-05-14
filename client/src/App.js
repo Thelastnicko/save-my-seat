@@ -11,15 +11,17 @@ import Confirmation from "./components/Confirmation/Confirmation";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route exact path="/" element={<MainComponent />} />
-          <Route path="/tables" element={<TablesInfo />} />
-          <Route path="/confirmation" element={<Confirmation />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/events" element={<EventComponent />} />
-        </Routes>
+      <div className="app-container">
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route exact path="/" element={<MainComponent />} />
+            <Route path="/tables" element={<TablesInfo />} />
+            <Route path="/confirmation" element={<Confirmation />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/events" element={<EventComponent />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );

@@ -1,7 +1,11 @@
 import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import queryString from "query-string";
 import "./Confirmation.scss";
 
 const Confirmation = () => {
+  let location = useLocation();
+  let queryParams = queryString.parse(location.search);
   return (
     <section className="confirmation-container">
       <h1>Thank you!</h1>
@@ -12,13 +16,15 @@ const Confirmation = () => {
         </p>
         <div className="confirmation-container__details">
           <div className="confirmation-container__details__client">
-            <p>Name:</p>
-            <p>Date:</p>
-            <p>Time</p>
-            <p>Table:</p>
-            <button className="confirmation-container__details__button">
-              Done
-            </button>
+            <p>Name:{queryParams.name}</p>
+            <p>Date:{queryParams.date}</p>
+            <p>Time:{queryParams.time}</p>
+            <p>Table:{queryParams.table}</p>
+            <Link to="/">
+              <button className="confirmation-container__details__button">
+                Done
+              </button>
+            </Link>
           </div>
         </div>
       </div>
