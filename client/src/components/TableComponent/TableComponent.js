@@ -1,44 +1,5 @@
 import { Table, Space } from "antd";
 
-const columns = [
-  {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
-    render: (text) => <a>{text}</a>,
-  },
-  {
-    title: "Date",
-    dataIndex: "date",
-    key: "date",
-  },
-  {
-    title: "Guests",
-    dataIndex: "guests",
-    key: "guests",
-  },
-
-  {
-    title: "Time",
-    dataIndex: "time",
-    key: "time",
-  },
-  {
-    title: "Table",
-    dataIndex: "table",
-    key: "table",
-  },
-  {
-    title: "Action",
-    key: "action",
-    render: (text, record) => (
-      <Space size="middle">
-        <a>Edit </a>
-        <a>Delete </a>
-      </Space>
-    ),
-  },
-];
 const data = [
   {
     key: "1",
@@ -66,4 +27,45 @@ const data = [
   },
 ];
 
-export default (props) => <Table columns={columns} dataSource={props.data} />;
+export default (props) => {
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      render: (text) => <a>{text}</a>,
+    },
+    {
+      title: "Date",
+      dataIndex: "date",
+      key: "date",
+    },
+    {
+      title: "Guests",
+      dataIndex: "guests",
+      key: "guests",
+    },
+
+    {
+      title: "Time",
+      dataIndex: "time",
+      key: "time",
+    },
+    {
+      title: "Table",
+      dataIndex: "table",
+      key: "table",
+    },
+    {
+      title: "Action",
+      key: "action",
+      render: (text, record) => (
+        <Space size="middle">
+          <a>Edit </a>
+          <a onClick={() => props.delete(record._id)}>Delete </a>
+        </Space>
+      ),
+    },
+  ];
+  return <Table columns={columns} dataSource={props.data} />;
+};

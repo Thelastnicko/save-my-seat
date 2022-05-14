@@ -25,10 +25,20 @@ const EventComponent = () => {
         console.log("error");
       });
   }, []);
-
+  const recordDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this reservation?")) {
+      axios
+        .delete("http://localhost:8080/reservations/" + id)
+        .then(() => {
+          alert("this reservation has been deleted!");
+          window.location.reload();
+        })
+        .catch(() => {});
+    }
+  };
   return (
     <div className="event-component-contaniner">
-      <TableComponent data={data} />
+      <TableComponent delete={recordDelete} data={data} />
     </div>
   );
 };
