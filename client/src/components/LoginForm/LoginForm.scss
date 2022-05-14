@@ -1,0 +1,13 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Typography.scss";
+
+.ant-form {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  background: rgba(99, 99, 99, 0.75);
+  color: #fff;
+}
