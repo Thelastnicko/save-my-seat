@@ -8,6 +8,7 @@ import EventComponent from "./components/EventComponent/EventComponent";
 import "antd/dist/antd.css";
 import Confirmation from "./components/Confirmation/Confirmation";
 import LoginForm from "./components/LoginForm/LoginForm";
+import EventeEditComponent from "./components/EventeEditComponent/EventeEditComponent";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/events" element={<EventComponent />} />
+            <Route path="/events/:id" element={<EventeEditComponent />} />
           </Routes>
         </div>
       </div>

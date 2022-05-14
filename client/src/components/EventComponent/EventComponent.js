@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TableComponent from "../TableComponent/TableComponent";
 import { useNavigate } from "react-router-dom";
+
 import "./EventComponent.scss";
 import axios from "axios";
 
@@ -36,9 +37,12 @@ const EventComponent = () => {
         .catch(() => {});
     }
   };
+  const recordEdit = (id) => {
+    navigate("/events/" + id);
+  };
   return (
     <div className="event-component-contaniner">
-      <TableComponent delete={recordDelete} data={data} />
+      <TableComponent edit={recordEdit} delete={recordDelete} data={data} />
     </div>
   );
 };
