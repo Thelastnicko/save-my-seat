@@ -17,7 +17,7 @@ const MainComponent = (props) => {
     setTime(timeIn.format("hh:mm a"));
   };
   const onChangeName = (event) => {
-    setName(event.targer.value);
+    setName(event.target.value);
   };
   const onChangeGuests = (guests) => {
     setGuests(guests);

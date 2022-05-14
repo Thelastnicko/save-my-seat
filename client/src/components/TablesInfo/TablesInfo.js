@@ -60,7 +60,7 @@ const TablesInfo = () => {
       .post("http://localhost:8080/reservations", payLoad)
       .then((res) => {
         navigate(
-          `/confirmation?date=${payLoad.date}&time=${payLoad.time}&guests=${payLoad.guests}&table=${tableSelected}`
+          `/confirmation?date=${payLoad.date}&time=${payLoad.time}&guests=${payLoad.guests}&table=${tableSelected}&name=${payLoad.name}`
         );
       })
       .catch((err) => {
@@ -80,7 +80,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[1] ? "$#91cc82" : "#9b4257",
+                background: openTables[1] ? "#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(1)}
             ></div>
@@ -91,7 +91,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[2] ? "$#91cc82" : "#9b4257",
+                background: openTables[2] ? "#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(2)}
             ></div>
@@ -103,7 +103,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[3] ? "$#91cc82" : "#9b4257",
+                background: openTables[3] ? "#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(3)}
             ></div>
@@ -114,7 +114,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[4] ? "$#91cc82" : "#9b4257",
+                background: openTables[4] ? "#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(4)}
             ></div>
@@ -125,7 +125,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[5] ? "$#91cc82" : "#9b4257",
+                background: openTables[5] ? "#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(5)}
             ></div>
@@ -136,7 +136,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[6] ? "$#91cc82" : "#9b4257",
+                background: openTables[6] ? "#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(6)}
             ></div>
@@ -147,7 +147,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[7] ? "$#91cc82" : "#9b4257",
+                background: openTables[7] ? "#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(7)}
             ></div>
@@ -161,7 +161,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[8] ? "$#91cc82" : "#9b4257",
+                background: openTables[8] ? "#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(8)}
             ></div>
@@ -172,7 +172,7 @@ const TablesInfo = () => {
             <div
               className="tables__table"
               style={{
-                background: openTables[9] ? "$#91cc82" : "#9b4257",
+                background: openTables[9] ? "#91cc82" : "#9b4257",
               }}
               onClick={() => setTable(9)}
             ></div>
@@ -184,49 +184,49 @@ const TablesInfo = () => {
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[10] ? "$#91cc82" : "#9b4257",
+                    background: openTables[10] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(10)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[11] ? "$#91cc82" : "#9b4257",
+                    background: openTables[11] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(11)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[12] ? "$#91cc82" : "#9b4257",
+                    background: openTables[12] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(12)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[13] ? "$#91cc82" : "#9b4257",
+                    background: openTables[13] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(13)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[14] ? "$#91cc82" : "#9b4257",
+                    background: openTables[14] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(14)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[15] ? "$#91cc82" : "#9b4257",
+                    background: openTables[15] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(15)}
                 ></span>
                 <span
                   className="tables-vertical__seat"
                   style={{
-                    background: openTables[16] ? "$#91cc82" : "#9b4257",
+                    background: openTables[16] ? "#91cc82" : "#9b4257",
                   }}
                   onClick={() => setTable(16)}
                 ></span>
