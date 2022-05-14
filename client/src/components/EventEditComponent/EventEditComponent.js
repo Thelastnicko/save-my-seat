@@ -38,6 +38,26 @@ const EventEditComponent = () => {
   const onChangeTable = (table) => {
     setTable(table);
   };
+  const onClickUpdate = () => {
+    if (window.confirm("Are you sure you want to update this reservation?")) {
+      let payload = {
+        id,
+        date: date.format("YYYY-MM-DD"),
+        time,
+        table,
+        guests,
+      };
+      axios
+        .put("http://localhost:8080/reservations/" + id, payload)
+        .then(() => {
+          alert("this reservation has been updated!");
+          navigate("/events");
+        })
+        .catch((err) => {
+          alert("An error has occured, please verify your reservation!");
+        });
+    }
+  };
   return (
     <div className="event-edit-container">
       <div className="event-form-container">
@@ -54,7 +74,9 @@ const EventEditComponent = () => {
         <InputNumber min={1} max={16} value={table} onChange={onChangeTable} />
         <InputNumber min={1} max={6} value={guests} onChange={onChangeGuests} />
       </div>
-      <button className="btn-update">Update</button>
+      <button className="btn-update" onClick={onClickUpdate}>
+        Update
+      </button>
     </div>
   );
 };
