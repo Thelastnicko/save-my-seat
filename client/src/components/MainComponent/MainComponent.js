@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MainComponent.scss";
 import { DatePicker, TimePicker, InputNumber } from "antd";
@@ -10,6 +10,7 @@ const MainComponent = (props) => {
   let [time, setTime] = useState("8:00 pm");
   let [name, setName] = useState("");
   let [guests, setGuests] = useState(2);
+  let inputNameRef = useRef();
   const onChangeDatePicker = (date, dateString) => {
     setDate(date);
   };
@@ -23,6 +24,11 @@ const MainComponent = (props) => {
     setGuests(guests);
   };
   const onClickFindTable = () => {
+    if (name === "") {
+      alert("Please enter your name!");
+      inputNameRef.current.focus();
+      return;
+    }
     navigate(
       `/tables?date=${date.format(
         "YYYY-MM-DD"
@@ -52,6 +58,7 @@ const MainComponent = (props) => {
             use12Hours
           />
           <input
+            ref={inputNameRef}
             value={name}
             type="text"
             onChange={onChangeName}
