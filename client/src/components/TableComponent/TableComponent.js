@@ -26,7 +26,6 @@ const data = [
     time: "8:00 pm",
   },
 ];
-
 export default (props) => {
   const columns = [
     {
@@ -61,7 +60,7 @@ export default (props) => {
       key: "action",
       render: (text, record) => (
         <Space size="middle">
-          <a>Edit </a>
+          <a onClick={() => props.edit(record._id)}>Edit </a>
           <a onClick={() => props.delete(record._id)}>Delete </a>
         </Space>
       ),
