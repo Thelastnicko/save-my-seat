@@ -1,11 +1,17 @@
-import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "antd/dist/antd.css";
 import "./LoginForm.scss";
 import { Form, Input, Button } from "antd";
 
 const Login = () => {
   let navigate = useNavigate();
+  useEffect(() => {
+    let logged = localStorage.getItem("logged");
+    if (logged === "true") {
+      navigate("/events");
+    }
+  }, []);
   let [user, setUser] = useState("");
   let [pass, setPass] = useState("");
   const onChangeUser = (event) => {
@@ -17,12 +23,12 @@ const Login = () => {
   const onClickLogin = (event) => {
     event.preventDefault();
     if (user === "admin" && pass === "admin") {
+      localStorage.setItem("logged", "true");
       navigate(`/events`);
     } else {
       alert("Username or password invalid!");
     }
   };
-
   return (
     <Form
       name="basic"
