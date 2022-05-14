@@ -64,10 +64,12 @@ reservationRoutes.put("/:id", async (req, res) => {
     const updateReservation = await Reservation.updateOne(
       { _id: req.params.id },
       {
-        $set: { date: req.body.date },
-        $set: { time: req.body.time },
-        $set: { guests: req.body.guests },
-        $set: { table: req.body.table },
+        $set: {
+          date: req.body.date,
+          time: req.body.time,
+          guests: req.body.guests,
+          table: req.body.table,
+        },
       }
     );
     res.json(updateReservation);
