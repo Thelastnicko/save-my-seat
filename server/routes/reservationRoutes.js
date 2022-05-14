@@ -63,7 +63,12 @@ reservationRoutes.put("/:id", async (req, res) => {
   try {
     const updateReservation = await Reservation.updateOne(
       { _id: req.params.id },
-      { $set: { name: req.body.name } }
+      {
+        $set: { date: req.body.date },
+        $set: { time: req.body.time },
+        $set: { guests: req.body.guests },
+        $set: { table: req.body.table },
+      }
     );
     res.json(updateReservation);
   } catch (err) {
