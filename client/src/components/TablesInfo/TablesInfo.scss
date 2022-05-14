@@ -1,4 +1,5 @@
 @import "../../styles/Globals.scss";
+@import "../../styles/Variables.scss";
 
 .tables-container {
   width: 100%;
@@ -10,16 +11,12 @@
 }
 
 .tables {
-  height: 472px;
+  height: 500px;
   width: 80%;
-  background: radial-gradient(
-    60.91% 148.03% at 0.82% -0.95%,
-    #b09e70 0%,
-    rgba(230, 230, 230, 0.75) 100%
-  );
-  border: 2px solid #ffffff;
+  background: rgba(99, 99, 99, 0.75);
+  border: 2px solid #dddddd;
   box-sizing: border-box;
-  border-radius: 32px;
+  border-radius: 15px;
   &__window {
     width: 16px;
     height: 223px;
@@ -79,7 +76,7 @@
     margin-left: 1rem;
     width: 31px;
     height: 133px;
-    background: #62503c;
+    background: #988670;
     border-radius: 0px 0px 8px 8px;
   }
   .tables-vertical {
@@ -107,7 +104,7 @@
       width: 521px;
       height: 106px;
       margin-left: 4rem;
-      background: #62503c;
+      background: #988670;
       border-radius: 59px;
     }
   }
@@ -117,17 +114,13 @@
   justify-content: space-between;
 
   &__back {
-    width: 72px;
-    height: 40px;
-    background-color: #f1414c;
-    border-radius: 20%;
-    border: none;
+    margin-left: 4rem;
   }
+
   &__confirm {
-    width: 72px;
-    height: 40px;
-    background-color: #95db74;
-    border-radius: 20%;
-    border: none;
+    margin-right: 4rem;
   }
+}
+img:hover {
+  border: 1px solid #dddddd;
 }

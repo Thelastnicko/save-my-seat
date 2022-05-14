@@ -42,6 +42,22 @@
     padding-top: 5rem;
   }
 }
-.btn-link {
-  padding-top: 4rem;
+.btn {
+  cursor: pointer;
+  color: $text-color;
+  margin-top: 5rem;
+  text-align: center;
+  width: 100px;
+  height: 35px;
+  background: linear-gradient(180deg, #f2b165 1.04%, #e97a3b 100%);
+  border-radius: 6px;
+  border: none;
+}
+.btn:hover {
+  background: $table;
+}
+.btn:active {
+  background: linear-gradient(180deg, #f2b165 1.04%, #e97a3b 100%);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

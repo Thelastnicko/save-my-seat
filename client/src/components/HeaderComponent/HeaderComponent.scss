@@ -5,11 +5,15 @@
   justify-content: space-between;
   height: 3rem;
   &__logo img {
-    height: 50px;
-    width: 140px;
+    height: 44px;
+    width: 130px;
+    margin-left: 12rem;
   }
   &__link {
-    color: #ffffff;
+    color: #dddddd;
     margin-right: 1.5rem;
   }
+}
+nav {
+  margin-right: 11rem;
 }

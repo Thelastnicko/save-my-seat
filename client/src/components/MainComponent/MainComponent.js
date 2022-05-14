@@ -1,27 +1,32 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MainComponent.scss";
-import { DatePicker, TimePicker, InputNumber, Button } from "antd";
+import { DatePicker, TimePicker, InputNumber } from "antd";
 import moment from "moment";
 
 const MainComponent = (props) => {
   let navigate = useNavigate();
   let [date, setDate] = useState(moment(new Date(), "YYYY-MM-DD"));
   let [time, setTime] = useState("8:00 pm");
+  let [name, setName] = useState("");
   let [guests, setGuests] = useState(2);
   const onChangeDatePicker = (date, dateString) => {
-    setDate(dateString);
+    setDate(date);
   };
   const onChangeTimePicker = (timeIn, timeString) => {
     setTime(timeIn.format("hh:mm a"));
   };
+  const onChangeName = (event) => {
+    setName(event.targer.value);
+  };
   const onChangeGuests = (guests) => {
     setGuests(guests);
   };
-
   const onClickFindTable = () => {
     navigate(
-      `/tables?date=${date.format("YYYY-MM-DD")}&time=${time}&guests=${guests}`
+      `/tables?date=${date.format(
+        "YYYY-MM-DD"
+      )}&time=${time}&guests=${guests}&name=${name}`
     );
   };
   return (
@@ -46,6 +51,12 @@ const MainComponent = (props) => {
             format="hh:mm a"
             use12Hours
           />
+          <input
+            value={name}
+            type="text"
+            onChange={onChangeName}
+            placeholder="Enter full name here"
+          ></input>
           <InputNumber
             min={1}
             max={6}
@@ -53,9 +64,9 @@ const MainComponent = (props) => {
             onChange={onChangeGuests}
           />
         </div>
-        <Button className="btn" onClick={onClickFindTable}>
+        <button className="btn" onClick={onClickFindTable}>
           Find table
-        </Button>
+        </button>
       </div>
     </section>
   );
