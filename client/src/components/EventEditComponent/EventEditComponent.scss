@@ -6,10 +6,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgba(99, 99, 99, 0.75);
   height: 80vh;
 }
 .event-form-container {
   display: flex;
+
   flex-direction: column;
   color: $text-color;
 }
