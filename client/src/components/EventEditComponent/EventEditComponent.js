@@ -41,7 +41,6 @@ const EventEditComponent = () => {
   const onClickUpdate = () => {
     if (window.confirm("Are you sure you want to update this reservation?")) {
       let payload = {
-        id,
         date: date.format("YYYY-MM-DD"),
         time,
         table,
