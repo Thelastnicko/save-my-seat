@@ -24,39 +24,28 @@ const columns = [
     key: "time",
   },
   {
-    title: "Theme",
-    dataIndex: "theme",
-    key: "theme",
+    title: "Table",
+    dataIndex: "table",
+    key: "table",
   },
-  {
-    title: "Phone",
-    dataIndex: "phone",
-    key: "phone",
-  },
-  {
-    title: "Email",
-    dataIndex: "email",
-    key: "email",
-  },
-
   {
     title: "Action",
     key: "action",
     render: (text, record) => (
       <Space size="middle">
+        <a>Edit </a>
         <a>Delete </a>
       </Space>
     ),
   },
 ];
-
 const data = [
   {
     key: "1",
     name: "John Brown",
     date: "22/5/2022",
     guests: 32,
-    theme: "New York No. 1 Lake Park",
+    table: "8",
     time: "8:00 pm",
   },
   {
@@ -64,7 +53,7 @@ const data = [
     name: "Jim Green",
     date: "22/5/2022",
     guests: 42,
-    theme: "London No. 1 Lake Park",
+    table: "5",
     time: "8:00 pm",
   },
   {
@@ -72,9 +61,9 @@ const data = [
     name: "Joe Black",
     date: "22/5/2022",
     guests: 32,
-    theme: "Sidney No. 1 Lake Park",
+    table: "2",
     time: "8:00 pm",
   },
 ];
 
-export default () => <Table columns={columns} dataSource={data} />;
+export default (props) => <Table columns={columns} dataSource={props.data} />;
