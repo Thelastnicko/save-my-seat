@@ -5,7 +5,7 @@ import "./EventEditComponent.scss";
 import moment from "moment";
 import axios from "axios";
 
-const EventeEditComponent = () => {
+const EventEditComponent = () => {
   let { id } = useParams();
   let navigate = useNavigate();
   let location = useLocation();
@@ -18,8 +18,10 @@ const EventeEditComponent = () => {
     axios
       .get("http://localhost:8080/reservations/" + id)
       .then((res) => {
-        console.log(res.data);
         setDate(moment(res.data.date, "YYYY-MM-DD"));
+        setTime(res.data.time);
+        setTable(res.data.table);
+        setGuests(res.data.guests);
       })
       .catch(() => {});
   }, []);
@@ -40,11 +42,11 @@ const EventeEditComponent = () => {
     <div className="event-edit-container">
       <div className="event-form-container">
         <DatePicker
-          defaultValue={moment(date, "YYYY-MM-DD")}
+          value={moment(date, "YYYY-MM-DD")}
           onChange={onChangeDatePicker}
         />
         <TimePicker
-          defaultValue={moment(time, "hh:mm a")}
+          value={moment(time, "hh:mm a")}
           onChange={onChangeTimePicker}
           format="hh:mm a"
           use12Hours
@@ -57,4 +59,4 @@ const EventeEditComponent = () => {
   );
 };
 
-export default EventeEditComponent;
+export default EventEditComponent;
