@@ -37,7 +37,7 @@ After installing the required node modules in both client and server directory, 
 ⦁ Deploy the application and implement it in a live environment.
 ⦁ Create a waitlist feature so users get notifed when a new table has become available.
 
-### Screenshoots
+### Screenshots
 
 ## Main screen
 
