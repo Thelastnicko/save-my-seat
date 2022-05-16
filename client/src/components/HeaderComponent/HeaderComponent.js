@@ -14,7 +14,7 @@ const HeaderComponent = () => {
           Home
         </Link>
         <Link to="/events" className="header__link">
-          Events
+          Reservations
         </Link>
         <Link to="/contact" className="header__link">
           Contact

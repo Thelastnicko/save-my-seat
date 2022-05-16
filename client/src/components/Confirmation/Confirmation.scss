@@ -1,11 +1,13 @@
 @import "../../styles/Variables.scss";
 @import "../../styles/Typography.scss";
+@import "../../styles/Globals.scss";
 
 .confirmation-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 5rem;
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -14,13 +16,26 @@
     color: $text-color;
     text-align: center;
     width: 30%;
-    height: 50vh;
+    height: 60vh;
     background: rgba(99, 99, 99, 0.75);
     border-radius: 28px;
   }
   > h1 {
+    font-size: 2rem;
     color: $text-color;
   }
+}
+.confirmation-container__details {
+  margin-top: 1rem;
+}
+.confirmation-container__wrapper__description {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: poppins-light;
+  color: $text-color;
 }
 .confirmation-container__details__button {
   cursor: pointer;
@@ -33,6 +48,9 @@
   border-radius: 6px;
   border: none;
 }
+.confirmation-container__details__client {
+  display: flex;
+}
 .confirmation-container__details__button:hover {
   background: $table;
 }
@@ -40,4 +58,14 @@
   background: linear-gradient(180deg, #f2b165 1.04%, #e97a3b 100%);
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.confirmation-container__details__client {
+  font-family: poppins-reg;
+  font-size: 1rem;
+}
+.confirmation-container__details__titles {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
 }
