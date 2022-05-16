@@ -41,8 +41,9 @@ const MainComponent = (props) => {
       <p className="main-container__description">
         Please note that due to limited seating, reservations for groups of two
         or less may be sat at our bar. We keep a limited number of tables
-        available for walk-ins. Please email us for last minute reservations and
-        special requests and we’ll do our best to accommodate.
+        available for walk-ins. <br /> <br />
+        Please email us for last minute reservations and special requests and
+        we’ll do our best to accommodate.
       </p>
       <div className="form-container">
         <h3 className="form-container__title">Reservation information</h3>

@@ -10,6 +10,9 @@
   align-items: center;
   &__title {
     color: $text-color;
+    font-size: 3rem;
+    font-family: poppins-reg;
+    font-weight: 500;
   }
   &__container {
     display: flex;
@@ -24,8 +27,10 @@
     display: flex;
     flex-direction: column;
     color: $text-color;
+    font-family: poppins-light;
   }
 }
 .contact-section__hours {
   color: $text-color;
+  font-family: poppins-light;
 }

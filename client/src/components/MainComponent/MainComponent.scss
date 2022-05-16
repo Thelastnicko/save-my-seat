@@ -9,19 +9,20 @@
   height: 80vh;
   &__title {
     color: $text-color;
-    // font-size: ;
-    // font-family: ;
-    // line-height: ;
+    font-size: 3rem;
+    font-family: poppins-reg;
+    font-weight: 500;
   }
   &__description {
     color: $text-color;
     display: flex;
     flex-direction: column;
     width: 70%;
+    font-family: poppins-light;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 2rem;
-    font-weight: 400;
+    font-weight: 300;
   }
 }
 .form-container {
@@ -35,6 +36,7 @@
   &__title {
     color: $text-color;
     font-family: poppins-med;
+    font-size: 1.5rem;
   }
   &__pickers {
     display: flex;

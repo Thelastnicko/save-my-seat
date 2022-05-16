@@ -10,22 +10,30 @@ const Confirmation = () => {
     <section className="confirmation-container">
       <h1>Thank you!</h1>
       <div className="confirmation-container__wrapper">
-        <p>
-          Tu reserva se ha registrado satisfactoriamente. Te recomendamos llegar
-          a timepo ya que tienes 15 min de espera para tomar tu reserva.
+        <p className="confirmation-container__wrapper__description">
+          Your reservation at The Ace has been booked. Please arrive on time,
+          your reservation with be held for 15 minutes
         </p>
         <div className="confirmation-container__details">
           <div className="confirmation-container__details__client">
-            <p>Name:{queryParams.name}</p>
-            <p>Date:{queryParams.date}</p>
-            <p>Time:{queryParams.time}</p>
-            <p>Table:{queryParams.table}</p>
-            <Link to="/">
-              <button className="confirmation-container__details__button">
-                Done
-              </button>
-            </Link>
+            <div className="confirmation-container__details__titles">
+              <p>Name:</p>
+              <p>Date:</p>
+              <p>Time:</p>
+              <p>Table:</p>
+            </div>
+            <div className="confirmation-container__details__data">
+              <p>{queryParams.name}</p>
+              <p>{queryParams.date}</p>
+              <p>{queryParams.time}</p>
+              <p>{queryParams.table}</p>
+            </div>
           </div>
+          <Link to="/">
+            <button className="confirmation-container__details__button">
+              Done
+            </button>
+          </Link>
         </div>
       </div>
     </section>
